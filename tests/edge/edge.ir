@@ -1,0 +1,23 @@
+#start_function
+int func2(int a, int b):
+int-list: g
+float-list:
+    add, g, a, b
+    return, g
+#end_function
+
+#start_function
+int func1(int a):
+int-list: g
+float-list:
+    callr, g, func2, 0, a
+    return, g
+#end_function
+
+#start_function 
+void main(): 
+int-list: a
+float-list: 
+    callr, a, func1, 5
+    call, puti, a
+#end_function 

@@ -1,0 +1,25 @@
+#start_function
+int fact(int n):
+int-list: t1, x, r
+float-list:
+    assign, r, 1
+    brgt, if_label0, n, 1
+    assign, r, n
+    goto, end
+if_label0:
+    sub, x, n, 1
+    callr, t1, fact, x
+    mult, r, n, t1
+end:
+    return, r
+#end_function
+
+#start_function
+void main():
+int-list: x, z
+float-list:
+    callr, x, geti
+    callr, z, fact, x
+    call, puti, z
+    call, putc, 10
+#end_function

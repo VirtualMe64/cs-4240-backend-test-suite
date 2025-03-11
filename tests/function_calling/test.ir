@@ -1,0 +1,21 @@
+#start_function
+int func(int a, int b, int c, int d, int e, int f):
+int-list: g
+float-list:
+    assign, g, 0
+    add, g, a, g
+    add, g, b, g
+    add, g, c, g
+    add, g, d, g
+    add, g, e, g
+    add, g, f, g
+    return, g
+#end_function
+
+#start_function 
+void main(): 
+int-list: a
+float-list: 
+    callr, a, func, 1, 2, 3, 4, 5, 6
+    call, puti, a
+#end_function 
