@@ -128,7 +128,7 @@ def run_test(test):
                 result = run_case(ir_out_path_naive if arg == "naive" else ir_out_path_greedy, case)
                 if result.error:
                     print(f"Error: {case.in_path}, {arg}")
-                    log_file.write(f"Error: {case.in_path}, {arg}")
+                    log_file.write(f"Error: {case.in_path}, {arg}\n")
                     log_file.write(result.error_str)
                 elif result.correct:
                     print(f"Correct: {case.in_path}, {arg} ({result.writes} writes)")
