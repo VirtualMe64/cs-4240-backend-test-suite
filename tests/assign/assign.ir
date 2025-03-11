@@ -2,7 +2,7 @@
 void main(): 
 int-list: A[100], x
 float-list: 
-    assign A, 100, 10
+    assign, A, 100, 10
     array_load, x, A, 0
     call, puti, x
     array_load, x, A, 1
