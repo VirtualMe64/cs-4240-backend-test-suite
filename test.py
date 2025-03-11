@@ -18,7 +18,7 @@ class TestResult:
     error: bool
     error_str: str
     correct: bool
-    writes: int
+    reads: int
     output: list[str]
     target_output: list[str]    
 
@@ -86,9 +86,9 @@ def run_case(assembly_path, case):
     output = parts[:-3]
 
     stats = parts[-2]
-    writes = int(stats[stats.index("writes ") + 7:stats.index("#branches")])
+    reads = int(stats[stats.index("#reads : ") + 9:stats.index("#writes")])
     correct = output == expected
-    return TestResult(False, "", correct, writes, output, expected)
+    return TestResult(False, "", correct, reads, output, expected)
 
 def run_test(test):
     print(f"\nRunning test {test.name}")
@@ -131,11 +131,11 @@ def run_test(test):
                     log_file.write(f"Error: {case.in_path}, {arg}\n")
                     log_file.write(result.error_str)
                 elif result.correct:
-                    print(f"Correct: {case.in_path}, {arg} ({result.writes} writes)")
-                    log_file.write(f"Correct: {case.in_path}, {arg} ({result.writes} writes)\n")
+                    print(f"Correct: {case.in_path}, {arg} ({result.reads} writes)")
+                    log_file.write(f"Correct: {case.in_path}, {arg} ({result.reads} writes)\n")
                 else:
-                    print(f"Incorrect: {case.in_path}, {arg} ({result.writes} writes)")
-                    log_file.write(f"Incorrect: {case.in_path}, {arg} ({result.writes} writes)\n")
+                    print(f"Incorrect: {case.in_path}, {arg} ({result.reads} writes)")
+                    log_file.write(f"Incorrect: {case.in_path}, {arg} ({result.reads} writes)\n")
                     log_file.write("Expected:\n")
                     for line in result.target_output:
                         log_file.write(line + "\n")
