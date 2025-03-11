@@ -1,5 +1,5 @@
 # CS 4240 Project 2 Test Suite
-This repository helps run solutions for CS 4240 project 2 against a range of tests, as well as making it simple to add more.
+This repository helps run solutions for CS 4240 Project 2 against a range of tests, as well as making it simple to add more.
 ## Instructions
 1. Add all project files (including `run.sh` and `build.sh`) to `src`
 2. Run `python3 test.py` from a unix system with SPIM installed. If needed, add the `-b` flag to build the code before running tests.
