@@ -5,12 +5,17 @@ float-list:
     assign, A, 100, 10
     array_load, x, A, 0
     call, puti, x
+    call, putc, 10
     array_load, x, A, 1
     call, puti, x
+    call, putc, 10
     array_load, x, A, 2
     call, puti, x
+    call, putc, 10
     array_load, x, A, 3
     call, puti, x
+    call, putc, 10
     array_load, x, A, 99
     call, puti, x
+    call, putc, 10
 #end_function 
